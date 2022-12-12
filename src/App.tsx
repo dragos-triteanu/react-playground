@@ -10,13 +10,13 @@ function App() {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo"/>
         </header>
-        <body className="App-body">
-        <MyReactClassComponent name={'noome 1'}
-                               doClick={onDoClick}/>
+        <div className="App-body">
+          <MyReactClassComponent name={'noome 1'}
+                                 doClick={onDoClick}/>
 
-        <MyReactFunctionalComponent cname={'noome 2'}
-                                    doClick={onDoClick}/>
-        </body>
+          <MyReactFunctionalComponent cname={'noome 2'}
+                                      doClick={onDoClick}/>
+        </div>
       </div>
   );
 }
