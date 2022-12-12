@@ -1,26 +1,28 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import MyReactClassComponent from './components/ClassComponent/ClassComponent';
+import { MyReactFunctionalComponent } from './components/FunctionalComponent/FunctionalComponent';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo"/>
+        </header>
+        <body className="App-body">
+        <MyReactClassComponent name={'noome 1'}
+                               doClick={onDoClick}/>
+
+        <MyReactFunctionalComponent cname={'noome 2'}
+                                    doClick={onDoClick}/>
+        </body>
+      </div>
   );
+}
+
+function onDoClick(name: string) {
+  alert(name);
 }
 
 export default App;

@@ -1,4 +1,17 @@
-# Getting Started with Create React App
+# React Playground
+This is a playground app designed to have fun with in understanding the core tenets of react
+It tries to compare the class vs functional approach based on Dan Abramov's presentation
+
+https://medium.com/capgemini-norway/react-hooks-just-killed-redux-9d63db1e828d
+
+
+
+
+
+
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
