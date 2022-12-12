@@ -1,5 +1,5 @@
 import React from "react";
-import './ClassComponentStyle.css';
+import './ClassComponentStyle.scss';
 
 interface Props {
   name: string;
