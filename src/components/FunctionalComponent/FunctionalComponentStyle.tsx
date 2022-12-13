@@ -11,6 +11,10 @@ const MyReactFunctionalComponentStyle = styled.div(props => {
       flex-flow: column;
       align-items: center;
       justify-content: center;
+      
+      button {
+      border: 1px solid yellow;
+      }
 }`
 });
 
