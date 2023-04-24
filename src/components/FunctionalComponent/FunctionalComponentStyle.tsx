@@ -14,6 +14,12 @@ const MyReactFunctionalComponentStyle = styled.div(props => {
       
       button {
       border: 1px solid yellow;
+        
+      }
+      
+      button.dark {
+        background-color: #131111;
+        color: white;  
       }
 }`
 });

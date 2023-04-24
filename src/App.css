@@ -29,6 +29,10 @@
   justify-content: center;
 }
 
+.App-body.dark {
+  background-color: #030303;
+}
+
 .App-link {
   color: #61dafb;
 }

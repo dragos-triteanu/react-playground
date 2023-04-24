@@ -1,6 +1,7 @@
 import React from "react";
 import './ClassComponentStyle.scss';
 import useMediaQuery from '../shared/useMediaQuery';
+import ThemeContext from "../../state/ThemeContext/ThemeContext";
 
 /**
  * Represents the prop signature of the react component
@@ -77,16 +78,22 @@ export default class MyReactClassComponent extends React.Component<Props, State>
    */
   render() {
     return (
-        <div className="classComponent">
-          {this.state.name} is {this.state.id}
-          <h1>Class Component</h1>
-          <p>{this.state.isMobile ? 'mobile' : 'web'}</p>
-          <button style={{height: '30px'}}
-                  onClick={() => this.handleClick(Math.floor(Math.random() * 7) + 1)}>
-            Change state
-          </button>
-          <p>{this.state.width}</p>
-        </div>
+        // #CONTEXT Here we subscribe to the context using the ThemeContext.Consumer tag
+        <ThemeContext.Consumer>
+          {(ctx) =>
+              <div className="classComponent">
+                {this.state.name} is {this.state.id}
+                <h1>Class Component</h1>
+                <p>{this.state.isMobile ? 'mobile' : 'web'}</p>
+                <button style={{height: '30px'}}
+                        className={(ctx.isDark ? 'dark' : 'light')}
+                        onClick={() => this.handleClick(Math.floor(Math.random() * 7) + 1)}>
+                  Change state
+                </button>
+                <p>{this.state.width}</p>
+              </div>
+          }
+        </ThemeContext.Consumer>
     )
   }
 

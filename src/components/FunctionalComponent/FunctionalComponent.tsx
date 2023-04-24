@@ -1,6 +1,7 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useContext, useEffect, useState } from "react";
 import { MyReactFunctionalComponentStyle } from './FunctionalComponentStyle';
 import useMediaQuery from '../shared/useMediaQuery';
+import ThemeContext from '../../state/ThemeContext/ThemeContext';
 
 interface Props {
   cname: string;
@@ -15,6 +16,10 @@ export const MyReactFunctionalComponent: FC<Props> = ({cname, doClick}) => {
   const [name, setName] = useState(cname);
   const [id, setId] = useState(Math.floor(Math.random() * 7) + 1);
   const width = useWindowWidth();
+  /**
+   * #CONTEXT Here we subscribe to the context using the useContext hook as an example
+   * */
+  const theme = useContext(ThemeContext);
 
 
   /**
@@ -38,6 +43,7 @@ export const MyReactFunctionalComponent: FC<Props> = ({cname, doClick}) => {
           <h1>Functional Component</h1>
           <p>{isMobile ? 'mobile' : 'web'}</p>
           <button style={{height: '30px'}}
+                  className={(theme.isDark ? 'dark' : 'light')}
                   onClick={() => handleNameChange(Math.floor(Math.random() * 7) + 1)}>
             Change state
           </button>
